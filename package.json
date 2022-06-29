@@ -1,0 +1,35 @@
+{
+  "name": "ts-email-service",
+  "version": "1.0.0",
+  "description": "Project create to help send and receive e-mails with nodemailer",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon /src/index.ts",
+    "start": "node /src/index.ts",
+    "start:dev": "node --loader ts-node/esm ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroSales117/ts-email-service.git"
+  },
+  "keywords": [
+    "e-mail",
+    "service",
+    "ts",
+    "ts-node"
+  ],
+  "author": "Pedro Sales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PedroSales117/ts-email-service/issues"
+  },
+  "homepage": "https://github.com/PedroSales117/ts-email-service#readme",
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.4",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0"
+  },
+  "dependencies": {
+    "nodemailer": "^6.7.3"
+  }
+}
