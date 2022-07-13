@@ -1,5 +1,5 @@
 import { router } from '../config/express.config'
-import { EmailController } from '../controllers/emailController'
+import { EmailController } from '../controllers/email-controller'
 
 export const sendEmailRouter = router
 
@@ -16,7 +16,7 @@ sendEmailRouter.post('/send', (request, response) => {
   void new EmailController().send({ emailSender, emailSenderPass, emailReceiver, emailSubject, emailText, emailHtml })
     .then(emailResponse => {
       if (emailResponse?.accepted[0] !== emailReceiver) {
-        return response.status(400).json({ Error: 'Email not send', Message: emailResponse })
+        return response.status(400).json({ Error: 'Email not send', Message: emailResponse, emailId: emailResponse.messageId })
       }
       return response.status(200).json({ data: emailResponse })
     })
